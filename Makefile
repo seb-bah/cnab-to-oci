@@ -71,7 +71,7 @@ test-e2e: e2e-image
 	docker run --rm --network=host -v /var/run/docker.sock:/var/run/docker.sock cnab-to-oci-e2e
 
 build-e2e-test:
-	$(GO_TEST) -c github.com/cnabio/cnab-to-oci/e2e
+	$(GO_TEST) -c github.com/seb-bah/cnab-to-oci/e2e
 
 e2e-image:
 	docker build $(BUILD_ARGS) . -t cnab-to-oci-e2e
