@@ -2,8 +2,10 @@ module github.com/seb-bah/cnab-to-oci
 
 go 1.13
 
-replace github.com/docker/cnab-to-oci => github.com/seb-bah/cnab-to-oci v0.3.1-beta1.0.20210224194218-efe207594569
+replace (
+	github.com/docker/cnab-to-oci => github.com/seb-bah/cnab-to-oci v0.3.1-beta1.0.20210224195636-bd1a20c39b7b
 
+)
 require (
 	github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78
 	github.com/Masterminds/semver v1.5.0
