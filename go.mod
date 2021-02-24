@@ -5,6 +5,9 @@ go 1.13
 replace (
 	github.com/docker/cnab-to-oci => github.com/seb-bah/cnab-to-oci v0.3.1-beta1.0.20210224195636-bd1a20c39b7b
 
+	github.com/cnabio/cnab-to-oci/internal => github.com/seb-bah/cnab-to-oci/internal v0.3.1-beta1.0.20210224195636-bd1a20c39b7b
+	github.com/cnabio/cnab-to-oci/relocation => github.com/seb-bah/cnab-to-oci/relocation v0.3.1-beta1.0.20210224195636-bd1a20c39b7b
+
 )
 require (
 	github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78
@@ -13,7 +16,7 @@ require (
 	github.com/Nvveen/Gotty v0.0.0-20120604004816-cd527374f1e5
 	github.com/beorn7/perks v1.0.1
 	github.com/cnabio/cnab-go v0.10.0-beta1
-	github.com/cnabio/cnab-to-oci v0.3.1-beta1
+	github.com/seb-bah/cnab-to-oci v0.3.1-beta1
 	github.com/containerd/containerd v1.3.0
 	github.com/containerd/continuity v0.0.0-20181203112020-004b46473808
 	github.com/docker/cli v0.0.0-20191017083524-a8ff7f821017
