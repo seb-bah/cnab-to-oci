@@ -10,7 +10,6 @@ import (
 
 	"github.com/cnabio/cnab-go/bundle"
 	"github.com/cnabio/cnab-to-oci/converter"
-	"github.com/cnabio/cnab-to-oci/internal"
 	"github.com/cnabio/cnab-to-oci/relocation"
 	"github.com/containerd/containerd/errdefs"
 	"github.com/containerd/containerd/images"
@@ -27,6 +26,7 @@ import (
 	"github.com/opencontainers/go-digest"
 	ocischemav1 "github.com/opencontainers/image-spec/specs-go/v1"
 	"github.com/pkg/errors"
+	"github.com/seb-bah/cnab-to-oci/internal"
 )
 
 // ManifestOption is a callback used to customize a manifest before pushing it
