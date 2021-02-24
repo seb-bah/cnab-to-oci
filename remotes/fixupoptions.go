@@ -11,7 +11,6 @@ import (
 	"github.com/containerd/containerd/remotes"
 	"github.com/docker/distribution/reference"
 	ocischemav1 "github.com/opencontainers/image-spec/specs-go/v1"
-	"github.com/seb-bah/cnab-to-oci/internal"
 )
 
 const (
@@ -23,40 +22,14 @@ func noopEventCallback(FixupEvent) {}
 
 // fixupConfig defines the input required for a Fixup operation
 type fixupConfig struct {
-	bundle                        *bundle.Bundle
-	relocationMap                 relocation.ImageRelocationMap
-	targetRef                     reference.Named
-	eventCallback                 func(FixupEvent)
-	maxConcurrentJobs             int
-	jobsBufferLength              int
-	resolver                      remotes.Resolver
-	invocationImagePlatformFilter platforms.Matcher
-	componentImagePlatformFilter  platforms.Matcher
-	autoBundleUpdate              bool
-	pushImages                    bool
-	imageClient                   internal.ImageClient
-	pushOut                       io.Writer
 }
 
 // FixupOption is a helper for configuring a FixupBundle
 type FixupOption func(*fixupConfig) error
 
 func newFixupConfig(b *bundle.Bundle, ref reference.Named, resolver remotes.Resolver, options ...FixupOption) (fixupConfig, error) {
-	cfg := fixupConfig{
-		bundle:            b,
-		relocationMap:     relocation.ImageRelocationMap{},
-		targetRef:         ref,
-		resolver:          resolver,
-		eventCallback:     noopEventCallback,
-		jobsBufferLength:  defaultJobsBufferLength,
-		maxConcurrentJobs: defaultMaxConcurrentJobs,
-	}
-	for _, opt := range options {
-		if err := opt(&cfg); err != nil {
-			return fixupConfig{}, err
-		}
-	}
-	return cfg, nil
+
+	return nil, nil
 }
 
 // WithInvocationImagePlatforms use filters platforms for an invocation image
@@ -69,7 +42,7 @@ func WithInvocationImagePlatforms(supportedPlatforms []string) FixupOption {
 		if err != nil {
 			return err
 		}
-		cfg.invocationImagePlatformFilter = platforms.Any(plats...)
+		cfg.invocationImagePlatformFilter = nil
 		return nil
 	}
 }
@@ -84,7 +57,7 @@ func WithComponentImagePlatforms(supportedPlatforms []string) FixupOption {
 		if err != nil {
 			return err
 		}
-		cfg.componentImagePlatformFilter = platforms.Any(plats...)
+		cfg.componentImagePlatformFilter = nil
 		return nil
 	}
 }
@@ -132,7 +105,7 @@ func WithAutoBundleUpdate() FixupOption {
 // target tag.
 // But local only images (for example after a local build of components of the bundle) must be pushed.
 // This option will allow to push images that are only available in the docker daemon image store to the defined target.
-func WithPushImages(imageClient internal.ImageClient, out io.Writer) FixupOption {
+func WithPushImages(imageClient string, out io.Writer) FixupOption {
 	return func(cfg *fixupConfig) error {
 		cfg.pushImages = true
 		if imageClient == nil {
