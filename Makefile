@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := all
 SHELL:=/bin/bash
 
-PKG_NAME := github.com/cnabio/cnab-to-oci
+PKG_NAME := github.com/seb-bah/cnab-to-oci
 
 EXEC_EXT :=
 ifeq ($(OS),Windows_NT)
