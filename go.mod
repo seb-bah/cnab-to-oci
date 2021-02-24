@@ -6,10 +6,10 @@ replace (
 
 	github.com/cnabio/cnab-go => github.com/carolynvs/cnab-go v0.13.4-0.20210202134931-c688d6de576e
 
-	github.com/docker/cnab-to-oci => github.com/seb-bah/cnab-to-oci v0.3.1-beta1.0.20210224195636-bd1a20c39b7b
+	github.com/docker/cnab-to-oci => github.com/seb-bah/cnab-to-oci main
 
-	github.com/cnabio/cnab-to-oci/internal => github.com/seb-bah/cnab-to-oci/internal v0.3.1-beta1.0.20210224195636-bd1a20c39b7b
-	github.com/cnabio/cnab-to-oci/relocation => github.com/seb-bah/cnab-to-oci/relocation v0.3.1-beta1.0.20210224195636-bd1a20c39b7b
+	github.com/cnabio/cnab-to-oci/internal => github.com/seb-bah/cnab-to-oci/internal main
+	github.com/cnabio/cnab-to-oci/relocation => github.com/seb-bah/cnab-to-oci/relocation main
 
 )
 require (
