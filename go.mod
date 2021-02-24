@@ -3,21 +3,20 @@ module github.com/seb-bah/cnab-to-oci
 go 1.13
 
 replace (
-
 	github.com/cnabio/cnab-go => github.com/carolynvs/cnab-go v0.13.4-0.20210202134931-c688d6de576e
 
-	github.com/docker/cnab-to-oci => github.com/seb-bah/cnab-to-oci main
-
-	github.com/cnabio/cnab-to-oci/internal => github.com/seb-bah/cnab-to-oci/internal main
-	github.com/cnabio/cnab-to-oci/relocation => github.com/seb-bah/cnab-to-oci/relocation main
+	github.com/docker/cnab-to-oci => github.com/seb-bah/cnab-to-oci v0.3.1-beta1.0.20210224194218-efe207594569
 
 )
+
 require (
 	github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78
 	github.com/Masterminds/semver v1.5.0
 	github.com/Microsoft/go-winio v0.4.14
 	github.com/Nvveen/Gotty v0.0.0-20120604004816-cd527374f1e5
 	github.com/beorn7/perks v1.0.1
+	github.com/cnabio/cnab-go v0.10.0-beta1
+	github.com/cnabio/cnab-to-oci v0.3.1-beta1
 	github.com/containerd/containerd v1.3.0
 	github.com/containerd/continuity v0.0.0-20181203112020-004b46473808
 	github.com/docker/cli v0.0.0-20191017083524-a8ff7f821017
@@ -43,13 +42,13 @@ require (
 	github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4
 	github.com/prometheus/common v0.7.0
 	github.com/prometheus/procfs v0.0.5
-	github.com/qri-io/jsonpointer v0.1.0
-	github.com/qri-io/jsonschema v0.1.1
+	github.com/qri-io/jsonpointer v0.1.1
+	github.com/qri-io/jsonschema v0.2.1-0.20201028142641-08d62a2939dc
 	github.com/sirupsen/logrus v1.4.2
-	github.com/spf13/cobra v0.0.5
+	github.com/spf13/cobra v0.0.6
 	github.com/spf13/pflag v1.0.5
-	golang.org/x/net v0.0.0-20190812203447-cdfb69ac37fc
-	golang.org/x/sync v0.0.0-20190423024810-112230192c58
+	golang.org/x/net v0.0.0-20200226121028-0de0cce0169b
+	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
 	golang.org/x/sys v0.0.0-20190830141801-acfa387b8d69
 	google.golang.org/genproto v0.0.0-20190522204451-c2c4e71fbf69
 	google.golang.org/grpc v1.22.1
